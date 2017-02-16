@@ -1,0 +1,51 @@
+<html>
+    <head>
+    <title>Concept Design</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    </head>
+    <body>
+      <div id="wrapper">
+      <ul id="nav">
+      <div id="span"></div>
+      <li>RED</li>
+      <li>YELLOW</li>
+      <li>GREEN</li>
+      <li>BLUE</li>
+      </ul></div> 
+      
+       <div id="page1"></div> 
+       <div id="page2"></div> 
+       <div id="page3"></div> 
+       <div id="page4"></div> 
+       
+       <script type="text/javascript">
+        function height(){
+            var h = window.innerHeight;
+document.getElementById('page1').style.height = h+"px";
+            document.getElementById('page2').style.height = h+"px";
+            document.getElementById('page3').style.height = h+"px";
+            document.getElementById('page4').style.height = h+"px";
+    
+        }
+           
+           function move(){
+               var y = window.pageYOffset;
+               var h = window.innerHeight;
+               var s = document.getElementById('span');
+               
+               if(y < h){s.style.left = "0px"}
+               else if(y < (2*h)){s.style.left = "100px" }
+               
+                else if(y < (3*h)){s.style.left = "200px"}
+                else if(y >= (3*h)){s.style.left = "300px"  }               
+
+               
+           }
+           window.addEventListener('scroll',move);
+               window.addEventListener('load',height);
+           window.addEventListener('resize',height);
+        </script>
+    </body>
+    
+</html>
+
